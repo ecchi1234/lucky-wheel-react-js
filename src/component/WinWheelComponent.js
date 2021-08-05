@@ -71,6 +71,13 @@ export const WinWheelComponent = () => {
                 onClick={() => winWheelService.current.startSpin()}
               />
               <br />
+              <button
+                style={{ padding: 10 }}
+                onClick={() => winWheelService.current.downloadImage()}
+              >
+                Tải ảnh về
+              </button>
+              <br />
               <br />
               &nbsp;&nbsp;
               <a href="#" onClick={() => winWheelService.current.resetWheel()}>

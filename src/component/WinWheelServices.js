@@ -115,4 +115,21 @@ export class WinWheelService {
       this.wheelSpinning = true;
     }
   }
+  // ----------------------------------------------------------
+  // Download lucky wheel image on click
+  // ----------------------------------------------------------
+
+  downloadImage() {
+    const myCanvas = document.querySelector("#canvas");
+    if (window.navigator.msSaveBlob) {
+      window.navigator.msSaveBlob(myCanvas.msToBlob(), "canvas-image.png");
+    } else {
+      const a = document.createElement("a");
+      document.body.appendChild(a);
+      a.href = myCanvas.toDataURL("img/jpeg", 1);
+      a.download = "canvas-image.jpg";
+      a.click();
+      document.body.removeChild(a);
+    }
+  }
 }
